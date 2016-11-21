@@ -1,14 +1,16 @@
 # Flask 从入门到...
-  - 2016-11-21
-  - 来自你们即将滚蛋的老咸鱼部长以及郭dalao
+- 2016-11-21
+- 来自你们即将滚蛋的老咸鱼部长以及郭dalao
 
 **Important: Use Python3+, UTF-8**
 
 ## Stage 1
- - DEADLINE:**2016-11-30 23:59(UTC+8)**
+- DEADLINE:**2016-11-30 23:59(UTC+8)**
 
 **切换到 stage1 分支！！！**
+
 **切换到 stage1 分支！！！**
+
 **切换到 stage1 分支！！！**
 
 ### Target
@@ -28,7 +30,8 @@
 **以下所有最终效果，除非特殊说明，均为使用Flask，启动项目内置webserver后，访问`http://127.0.0.1:5000`（具体看配置，一般默认为这个地址）所看到的**
 
 在同一个Flask 项目中：
-1. 码农第一步，`Hello World`
+
+1. CodeMonkey第一步，`Hello World`
     - **要求：**访问`/step1`能看到`Hello World`字样。
 
 2. Hello World PLUS
