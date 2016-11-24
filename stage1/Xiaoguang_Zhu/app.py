@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 
 SVIP = ['咸鱼', 'juju', 'dalao', '大腿', '油条', '萌新', 'other']
 
@@ -21,9 +21,15 @@ def step2():
 	image = url_for('static', filename='img/MetroLoadin.gif'),
 	js = url_for('static', filename='js/step2.js'))
 
-@app.route('/step3')
+@app.route('/step3', methods=['POST', 'GET'])
 def step3():
-	return render_template('step3_index.html')
+	if request.method == 'GET':
+		return render_template('step3_index.html')
+	elif request.method == 'POST':
+		name = request.form['name']
+		title = request.form['title']
+		#return redirect('/step3/%s/%s' % title, name)
+		return '<font color="grey">Not yet finished!</font>'
 
 @app.route('/step3/<title>/<name>')
 def step3_userpage(title, name):
