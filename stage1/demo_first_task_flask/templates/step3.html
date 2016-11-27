@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block one %}
+    <h1>Hello, {{ username }}, You are {{ tag }}!</h1><br>
+{% endblock %}
+
+
+{% block two %}
+    {% for elm in tag_list %}
+        {% if elm == tag %}
+			{# if the tag exits in tag_list, then mark it as red color #}
+            <h2><font color="red">{{ elm }}</font></h2>
+        {% else %}
+            <h2>{{ elm }}</font></h2>
+        {% endif %}
+    {% endfor %}
+    {% if tag == 'other' %}
+        <h2><font color="green">other</font></h2>
+    {% endif %}
+{% endblock %}
