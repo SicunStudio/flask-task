@@ -1,5 +1,7 @@
 你们的辣鸡学长应部长juju的要求写了个demo，供还不会的或者有问题的童鞋参考
 
+开发环境：Ubuntu Linux 16.04 & Python 3.5.2
+
 1.需要html及css一点点的基础知识
 2.static整个目录配合第二个任务使用，放置js，css，jpg等静态文件。这里文件比较少就不设置二级目录了。
 3.templates目录放置html文件，其中step2.html为任务二所需，base.html,step3.html为任务三所需。
