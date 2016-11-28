@@ -9,6 +9,8 @@
     :license: BSD, see LICENSE_FILE for more details.
 """
 
+# Env: Ubuntu Linux 16.04 & Python 3.5.2
+
 from flask import Flask
 from flask import url_for, render_template
 
