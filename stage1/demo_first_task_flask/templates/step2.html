@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>
+		step2
+	</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'style.css') }}">
+	</head>
+
+	<body>
+		<h1>Hello, World!</h1>
+		{# use url_for to get resource #}
+		<img src="{{ url_for('static', filename = 'use_linux.jpg') }}"  alt="THROW WINDOWS">
+		<br><br>
+		<button type="button" onclick="demo()">click</button>
+		<script src="{{ url_for('static', filename = 'alert.js') }}"></script>
+	</body>
+</html>
