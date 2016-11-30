@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block step3_hello %}
+<p>Hello, {{name}}! You are {{title}}.</p>
+{% endblock %}
+
+{% block step3_other %}
+{% for rank in list %}
+    {% if rank==title %}
+        <h2><font color='blue'>{{rank}}</font></h2>
+    {% else %}
+        <h2>{{rank}}</h2>
+    {% endif %}
+{% endfor %}
+{% if title=='other' %}
+    <h2><font color='red'>other</font></h2>
+{% else %}
+    <h2>other</h2>
+{% endif %}
+{% endblock %}
