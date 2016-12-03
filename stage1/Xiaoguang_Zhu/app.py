@@ -5,7 +5,7 @@ SVIP = ['咸鱼', 'juju', 'dalao', '大腿', '油条', '萌新', 'other']
 
 app = Flask(__name__)
 
-#####################  route  ################################
+####################### route ####################################
 
 @app.route('/')
 def index():
@@ -23,16 +23,18 @@ def step2():
 	image = url_for('static', filename='img/MetroLoadin.gif'),
 	js = url_for('static', filename='js/step2.js'))
 
-# not yet finished, having problem with:
-# 1. recieving 'title' and 'name' from the index page
-# 2. redierecting to '/step3/<title>/<name>' using formatter
-@app.route('/step3')
-def step3():
-	return 'SORRY!!!\nNot yet finished!\nPlease type in URL directly!'
+@app.route('/step3', methods=['GET', 'POST'])
+def step3_login():
+	user_title = request.args.get('title', '')
+	user_name = request.args.get('name', '')
+	print(user_title, user_name)
+	# a stupid way of solving the login issue
+	if user_title=='' and user_name=='':
+		return render_template('step3_index.html')
+	return redirect('/step3/%s/%s' % (user_title, user_name))
 
 @app.route('/step3/<title>/<name>')
 def step3_userpage(title, name):
-	# stupid way of adding things into block_second
 	something = '<p>'
 	for i in SVIP[0:6]:
 		if i == title:
@@ -47,7 +49,7 @@ def step3_userpage(title, name):
 	return render_template('step3_userpage.html',
 	title = title, name = name, something = something)
 
-#####################  main body  ###################################
+#################################################################
 
 if __name__ == '__main__':
 	app.run(debug=True)
